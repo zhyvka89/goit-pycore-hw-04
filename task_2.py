@@ -12,15 +12,15 @@ def get_cats_info(path):
 
         for cat_el in cat_lines:
           res = cat_el.split(',')
-          cat_dics = {}
+          cat_dict = dict()
           for el in res:
             if(el.isdigit()):
-              cat_dics["age"] = el
+              cat_dict["age"] = el
             elif(any(chr.isdigit() for chr in el)):
-              cat_dics["id"] = el
+              cat_dict["id"] = el
             else:
-              cat_dics["name"] = el
-          cat_list.append(cat_dics)
+              cat_dict["name"] = el
+          cat_list.append(cat_dict)
           
         return cat_list
     except:
